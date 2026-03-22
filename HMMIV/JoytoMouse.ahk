@@ -172,21 +172,15 @@ IfWinActive, Heroes 4
 	}
 	else If JoyPOV = 18000 ;Down arrow
 ; I consider using L1+../R1+.. up/down combos for moving an army to those up-/down-left, up-/down-right
-; diagonal directions is functionally better and easier than hitting D-pad diagonal arrows in correct way.
+; diagonal directions is functionally better, because it's more precise, and easier than hitting D-pad diagonal arrows in correct way.
 	{
 		if !DArrowIsPressed
 		{
 			DArrowIsPressed := true
 			if GetKeyState(JoystickNumber . "Joy5")
-			{
-				Send {Down down}{Left}
-				Send {Left down} ; move an army to the down-left diagonal
-			}
+				Send {Numpad1} ; move an army to the down-left diagonal
 			else if GetKeyState(JoystickNumber . "Joy6")
-			{
-				Send {Down down}{Right}
-				Send {Right down} ; move an army to the down-right diagonal
-			}
+				Send {Numpad3} ; move an army to the down-right diagonal
 			else
 				Send {Down down} ; move an army down
 		}
@@ -199,21 +193,15 @@ IfWinActive, Heroes 4
 			Send {Right down} ; move an army right
 		}
 	}
-	else If JoyPOV = 0 ;Стрелка вверх
+	else If JoyPOV = 0 ;Up arrow
 	{
 		if !UArrowIsPressed
 		{
 			UArrowIsPressed := true
 			if GetKeyState(JoystickNumber . "Joy5")
-			{
-				Send {Up down}{Left}
-				Send {Left down} ; move an army to the up-left diagonal
-			}
+				Send {Numpad7} ; move an army to the up-left diagonal
 			else if GetKeyState(JoystickNumber . "Joy6")
-			{
-				Send {Up down}{Right}
-				Send {Right down} ; move an army to the up-right diagonal
-			}
+				Send {Numpad9} ; move an army to the up-right diagonal
 			else
 				Send {Up down} ; move an army up
 		}
